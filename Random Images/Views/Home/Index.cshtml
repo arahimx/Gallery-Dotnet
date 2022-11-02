@@ -1,0 +1,43 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+} 
+<section className="contaner">
+    <div className="container">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="card text-center col-md-4 mt-3 col-sm-10 p-0">
+                    <div class="card-header p-0">
+                        <img id="imgSrc" class="img-fluid">
+
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title"></h5>
+                    </div>
+                    <div class="card-footer text-muted">
+                        <button class="btn btn-outline-success" onclick="alertMe()">Change Image</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+@section scripts {
+<script type="text/javascript">
+    var max ="@ViewBag.max";
+    const pic = document.querySelector('section');
+    function alertMe() {
+        console.log(max);
+        var value = Math.floor(Math.random() * max);
+        console.log(value);
+        var img = "/Content/assets/" + value+".jpg";
+        console.log(img);
+        imgSrc.src = img
+
+
+    }
+
+</script>
+
+}
